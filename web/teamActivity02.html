@@ -18,9 +18,32 @@
 
   <body>
 
-    <div class="container myContainer">
-      <h1>Hello There</h1>
+    <div class="container">
+      <div class="container myContainer" id="first">
+        <p>Hello There</p>
+        <input type="text" id="color"></input>
+        <button class="changeColor">Change Color</button>
+      </div>
+
+      <div class="container myContainer">
+        <p>Hello There</p>
+        <button id="toggle">Toggle Next Div Visibility</button>
+      </div>
+
+      <div class="container myContainer" id="third">
+        <p>Hello There</p>
+        <button id="clickMe">Click Me!</button>
+      </div>
+
     </div>
 
+    <!-- jQuery library script below -->
+    <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+
+    <!-- personal JS file below -->
+    <script src="ta02.js"></script>
   </body>
 </html>
