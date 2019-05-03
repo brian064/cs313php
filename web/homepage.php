@@ -36,7 +36,7 @@
       <br/>
       <p>Server time: <?php $t = time(); echo $t; ?></p>
       <br/>
-      <button><a href="baAssignList.html">Assignments List</a></button>
+      <button><a href="baAssignList.php">Assignments List</a></button>
     </div>
 
     <footer>

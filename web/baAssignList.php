@@ -30,7 +30,7 @@
         No links at the moment.
       </ul>
       <br/>
-      <button><a href="homepage.html">Back to Home</a></button>
+      <button><a href="homepage.php">Back to Home</a></button>
     </div>
 
     <footer>
