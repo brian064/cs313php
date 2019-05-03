@@ -7,7 +7,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../../../favicon.ico">
 
-    <title>Brian A's Homepage</title>
+    <title>Assignment Lists</title>
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.css" rel="stylesheet">
@@ -19,24 +19,18 @@
   <body>
     <div class="myNav">
       <div class="mainTitle container">
-        <p>Brian's home</p>
+        <p>Assignment List</p>
       </div>
     </div>
 
-    <div class="container imageHolder">
-
-    </div>
-
     <div class="container introSec">
-      <h1>Hi there!</h1>
+      <h1>CS 313 Assignment Links</h1>
       <br/>
-      <p>My name is Brian Aguilar! I'm 21 years old, born and raised in the Philippines.</p>
+      <ul>
+        No links at the moment.
+      </ul>
       <br/>
-      <p>My hobbies include: singing, dancing, acting, drawing, skating, and web design.</p>
-      <br/>
-      <p>Server time: <?php $t = time() echo $t ?></p>
-      <br/>
-      <button><a href="baAssignList.html">Assignments List</a></button>
+      <button><a href="homepage.html">Back to Home</a></button>
     </div>
 
     <footer>
