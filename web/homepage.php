@@ -34,7 +34,10 @@
       <br/>
       <p>My hobbies include: singing, dancing, acting, drawing, skating, and web design.</p>
       <br/>
-      <p>Server time: <?php $t = time(); echo(date("Y-m-d",$t); ?></p>
+      <p>Server time: <?php
+      $t = time();
+      echo(date("Y-m-d",$t));
+      ?></p>
       <br/>
       <button><a href="baAssignList.php">Assignments List</a></button>
     </div>
