@@ -20,7 +20,7 @@
   $comments = test_input($_POST["comments"]);
 
   // Displaying User Details
-  echo "Your name: " . $name . "\n";
+  echo "Your name: " . $name . "<br/>";
   echo "Your email: " . $email . "\n";
   echo "Your major: " . $major . "\n";
   echo "Your comments: " . $comments . "\n";
