@@ -32,6 +32,12 @@ body {
   font-size: 30px;
 }
 
+.address li {
+  list-style-type: none;
+  margin-bottom: 5px;
+  font-size: 15px;
+}
+
 .itemBox button {
   padding: 3px;
 }
