@@ -73,7 +73,7 @@ session_start();
       </ul>
       <br/>
       <a href="browsePage.php"><button class="btn-default">Back To Browse</button></a>
-      <br/>
+      <br/><br/>
       <a href="checkOutPage.php"><button class="btn-default">Check Out</button></a>
     </div>
 
