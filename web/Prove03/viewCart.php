@@ -24,7 +24,31 @@ session_start();
 
     <!-- PHP Section -->
     <?php
+      //variables
+      $shirt = $_POST["bshirt"];
+      $cap = $_POST["bcap"];
+      $jacket = $_POST["bjacket"];
+      $pants = $_POST["bpants"];
 
+      if (!empty($shirt))
+      {
+         $_SESSION["shirt"] = "";
+      }
+
+      if (!empty($cap))
+      {
+         $_SESSION["cap"] = "";
+      }
+
+      if (!empty($jacket))
+      {
+         $_SESSION["jacket"] = "";
+      }
+
+      if (!empty($pants))
+      {
+         $_SESSION["pants"] = "";
+      }
      ?>
 
     <div class="myNav">
@@ -35,10 +59,14 @@ session_start();
 
     <div class="container itemBox">
       <ul>
-        <li><?php echo $_SESSION["shirt"]; ?></li>
-        <li><?php echo $_SESSION["cap"]; ?></li>
-        <li><?php echo $_SESSION["jacket"]; ?></li>
-        <li><?php echo $_SESSION["pants"]; ?></li>
+        <form action="viewCart.php" method="post">
+          <li><?php echo "<input type="checkbox" name="bshirt" value="Brian Shirt">" . $_SESSION["shirt"] . "</input>"; ?></li>
+          <li><?php echo "<input type="checkbox" name="bcap" value="Brian Cap">" . $_SESSION["cap"] . "</input>"; ?></li>
+          <li><?php echo "<input type="checkbox" name="bjacket" value="Brian Jacket">" . $_SESSION["jacket"] . "</input>"; ?></li>
+          <li><?php echo "<input type="checkbox" name="bpants" value="Brian Pants">" . $_SESSION["pants"] . "</input>"; ?></li>
+          <br/>
+          <button type="submit" class="btn-default">Delete Items</button>
+        </form>
       </ul>
       <br/>
       <a href="browsePage.php"><button class="btn-default">Back To Browse</button></a>
