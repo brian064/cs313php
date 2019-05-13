@@ -55,7 +55,7 @@ session_start();
           <button type="submit" class="btn-default">Add Items</button>
         </form>
         <br/>
-        <a href="viewCart.html"><button class="btn-default">VIEW CART</button></a>
+        <a href="viewCart.php"><button class="btn-default">VIEW CART</button></a>
       </ul>
     </div>
 

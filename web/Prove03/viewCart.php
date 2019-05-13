@@ -41,7 +41,7 @@ session_start();
         <li><?php echo $_SESSION["pants"]; ?></li>
       </ul>
       <br/>
-      <a href="browsePage.html"><button class="btn-default">Back To Browse</button></a>
+      <a href="browsePage.php"><button class="btn-default">Back To Browse</button></a>
     </div>
 
     <footer>
