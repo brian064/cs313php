@@ -41,3 +41,7 @@ body {
 .itemBox button {
   padding: 3px;
 }
+
+.header {
+  font-weight: bold;
+}

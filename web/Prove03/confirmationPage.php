@@ -11,7 +11,7 @@ session_start();
     <meta name="author" content="">
     <link rel="icon" href="../../../../favicon.ico">
 
-    <title>Brian's Store - Check Out</title>
+    <title>Brian's Store - Confirmation</title>
 
     <!-- Bootstrap core CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -23,25 +23,42 @@ session_start();
   <body>
 
     <!-- PHP Section -->
-    <?php ?>
+    <?php
+      //Address Variables
+      $address = $_POST["address"];
+      $apt = $_POST["apt"];
+      $city = $_POST["city"];
+      $zip = $_POST["zip"];
+
+      //Session Setting
+      $_SESSION["address"] = $address;
+      $_SESSION["apt"] = $apt;
+      $_SESSION["city"] = $city;
+      $_SESSION["zip"] = $zip;
+    ?>
 
     <div class="myNav">
       <div class="container">
-        <h4>Brian's Store - Check Out</h4>
+        <h4>Brian's Store - Confirmation</h4>
       </div>
     </div>
 
     <div class="container itemBox address">
       <ul>
+        <li class="header">Your Items</li>
+        <li><?php echo $_SESSION["shirt"]; ?></li>
+        <li><?php echo $_SESSION["cap"]; ?></li>
+        <li><?php echo $_SESSION["jacket"]; ?></li>
+        <li><?php echo $_SESSION["pants"]; ?></li>
+
         <li class="header">Your Shipping Address</li><br/>
-        <form action="confirmationPage.php" method="post">
-          <li>Address: <input type="text" name="address"></li>
-          <li>Apartment No: <input type="text" name="apt"></li>
-          <li>City: <input type="text" name="city"></li>
-          <li>Zip Code: <input type="text" name="zip"></li>
-          <br/>
-          <button type="submit" class="btn-default">Confirm</button>
-        </form>
+        Address: <?php echo $_SESSION["address"]; ?><br/>
+
+        Apartment No: <?php echo $_SESSION["apt"]; ?><br/>
+
+        City: <?php echo $_SESSION["city"]; ?><br/>
+
+        Zip Code: <?php echo $_SESSION["zip"]; ?><br/>
       </ul>
       <a href="viewCart.php"><button class="btn-default">Back To Cart</button></a>
     </div>
