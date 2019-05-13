@@ -61,7 +61,6 @@ session_start();
 
         Zip Code: <?php echo $_SESSION["zip"]; ?><br/>
       </ul>
-      <a href="viewCart.php"><button class="btn-default">Back To Cart</button></a>
     </div>
 
     <footer>
