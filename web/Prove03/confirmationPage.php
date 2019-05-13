@@ -50,8 +50,9 @@ session_start();
         <li><?php echo $_SESSION["cap"]; ?></li>
         <li><?php echo $_SESSION["jacket"]; ?></li>
         <li><?php echo $_SESSION["pants"]; ?></li>
+        <br/><br/>
 
-        <li class="header">Your Shipping Address</li><br/>
+        <li class="header">Your Shipping Address</li>
         Address: <?php echo $_SESSION["address"]; ?><br/>
 
         Apartment No: <?php echo $_SESSION["apt"]; ?><br/>
