@@ -25,10 +25,10 @@ session_start();
     <!-- PHP Section -->
     <?php
       //variables
-      $shirt = $_POST["bshirt"];
-      $cap = $_POST["bcap"];
-      $jacket = $_POST["bjacket"];
-      $pants = $_POST["bpants"];
+      $shirt = $_SESSION["shirt"];
+      $cap = $_SESSION["cap"];
+      $jacket = $_SESSION["jacket"];
+      $pants = $_SESSION["pants"];
 
       if (!empty($shirt))
       {
