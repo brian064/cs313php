@@ -60,10 +60,13 @@ session_start();
     <div class="container itemBox">
       <ul>
         <form action="viewCart.php" method="post">
-          <li><?php echo "<input type="checkbox" name="bshirt" value="Brian Shirt">" . $_SESSION["shirt"] . "</input>"; ?></li>
-          <li><?php echo "<input type="checkbox" name="bcap" value="Brian Cap">" . $_SESSION["cap"] . "</input>"; ?></li>
-          <li><?php echo "<input type="checkbox" name="bjacket" value="Brian Jacket">" . $_SESSION["jacket"] . "</input>"; ?></li>
-          <li><?php echo "<input type="checkbox" name="bpants" value="Brian Pants">" . $_SESSION["pants"] . "</input>"; ?></li>
+          <li><input type="checkbox" name="bshirt" value="Brian Shirt"><?php echo $_SESSION["shirt"]; ?></input></li>
+
+          <li><input type="checkbox" name="bcap" value="Brian Cap"><?php echo $_SESSION["cap"]; ?></input></li>
+
+          <li><input type="checkbox" name="bjacket" value="Brian Jacket"><?php echo $_SESSION["jacket"]; ?></input></li>
+
+          <li><input type="checkbox" name="bpants" value="Brian Pants"><?php echo $_SESSION["pants"]; ?></input></li>
           <br/>
           <button type="submit" class="btn-default">Delete Items</button>
         </form>
