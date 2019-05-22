@@ -53,7 +53,7 @@
         // echo $row['chapter'] . ':';
         // echo $row['verse'] . ' - \"';
         // echo $row['content'] . '\" <br/><br/>'
-      }
+      };
       ?>
     </div>
 
