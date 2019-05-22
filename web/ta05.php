@@ -48,10 +48,11 @@
       <?php
       foreach ($db->query('SELECT book, chapter, verse, content FROM scriptures') as $row)
       {
-        echo $row['book']. '';
-        echo $row['chapter'] . ':';
-        echo $row['verse'] . ' - \"';
-        echo $row['content'] . '\" <br/><br/>'
+        echo $row['book']
+        // echo $row['book']. '';
+        // echo $row['chapter'] . ':';
+        // echo $row['verse'] . ' - \"';
+        // echo $row['content'] . '\" <br/><br/>'
       }
       ?>
     </div>
