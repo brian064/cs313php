@@ -17,7 +17,7 @@
   </head>
 
   <body>
-    <div class="container">
+    <div class="">
       <h1>Scripture Resources</h1>
     </div>
 
