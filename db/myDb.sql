@@ -45,3 +45,21 @@ CREATE TABLE kickflip (
   info varchar(200),
   prg real -- trick progress
 );
+
+-- Inserting Dummy Info into tables
+
+--for Overall table
+INSERT INTO overall (usrname, prgtot, transprog, freeprog, funprog)
+VALUES ('Brian_064', 90, 40, 70, 60);
+
+--for Transition table
+INSERT INTO transition (info)
+VALUES ('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ac feugiat sed lectus vestibulum mattis ullamcorper velit.');
+
+--for Freestyle table
+INSERT INTO freestyle (info)
+VALUES ('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ac feugiat sed lectus vestibulum mattis ullamcorper velit.');
+
+--for Fundamentals table
+INSERT INTO fundamental (info)
+VALUES ('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ac feugiat sed lectus vestibulum mattis ullamcorper velit.');

@@ -58,7 +58,11 @@ session_start();
     <div class="container overall">
       <h3>Your Overall Progression:</h3>
       <div class="prgrs">
-        90%
+        <?php
+          $row = $db->query('SELECT * FROM overall');
+
+          echo $row['prgtot'] . '%'; 
+        ?>
       </div>
     </div>
 
