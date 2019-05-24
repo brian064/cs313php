@@ -97,12 +97,14 @@ session_start();
 
     <a href="fun.php"><div class="container overall fun">
       <h3>Fundamentals Progress:</h3>
-      <?php
-        foreach ($db->query('SELECT * FROM overall') as $row)
-        {
-          echo $row['funprog'] . '%';
-        }
-      ?>
+      <div class="prgrs">
+        <?php
+          foreach ($db->query('SELECT * FROM overall') as $row)
+          {
+            echo $row['funprog'] . '%';
+          }
+        ?>
+      </div>
     </div></a>
 
     <footer>
