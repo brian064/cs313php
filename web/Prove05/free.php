@@ -58,13 +58,23 @@ session_start();
     <div class="container overall free">
       <h3>Freestyle Progress:</h3>
       <div class="prgrs">
-        70%
+        <?php
+          foreach ($db->query('SELECT * FROM overall') as $row)
+          {
+            echo $row['freeprog'] . '%';
+          }
+        ?>
       </div>
     </div>
 
     <div class="container cheader">
       <h2>Freestyle Skating:</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Cursus turpis massa tincidunt dui ut ornare lectus sit amet. Faucibus turpis in eu mi bibendum neque.</p>
+      <p><?php
+        foreach ($db->query('SELECT * FROM freestyle') as $row)
+        {
+          echo $row['info'];
+        }
+      ?></p>
     </div>
 
     <div class="container overall free">

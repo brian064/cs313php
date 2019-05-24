@@ -58,13 +58,23 @@ session_start();
     <div class="container overall trans">
       <h3>Transition Progress:</h3>
       <div class="prgrs">
-        40%
+        <?php
+          foreach ($db->query('SELECT * FROM overall') as $row)
+          {
+            echo $row['transprog'] . '%';
+          }
+        ?>
       </div>
     </div>
 
     <div class="container cheader">
       <h2>Transition Skating:</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Cursus turpis massa tincidunt dui ut ornare lectus sit amet. Faucibus turpis in eu mi bibendum neque.</p>
+      <p><?php
+        foreach ($db->query('SELECT * FROM transition') as $row)
+        {
+          echo $row['info'];
+        }
+      ?></p>
     </div>
 
     <div class="container overall trans">
