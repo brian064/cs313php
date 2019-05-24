@@ -74,22 +74,35 @@ session_start();
   <a href="trans.php"><div class="container overall trans">
       <h3>Transition Progress:</h3>
       <div class="prgrs">
-        40%
+        <?php
+          foreach ($db->query('SELECT * FROM overall') as $row)
+          {
+            echo $row['transprog'] . '%';
+          }
+        ?>
       </div>
     </div></a>
 
     <a href="free.php"><div class="container overall free">
       <h3>Freestyle Progress:</h3>
       <div class="prgrs">
-        70%
+        <?php
+          foreach ($db->query('SELECT * FROM overall') as $row)
+          {
+            echo $row['freeprog'] . '%';
+          }
+        ?>
       </div>
     </div></a>
 
     <a href="fun.php"><div class="container overall fun">
       <h3>Fundamentals Progress:</h3>
-      <div class="prgrs">
-        60%
-      </div>
+      <?php
+        foreach ($db->query('SELECT * FROM overall') as $row)
+        {
+          echo $row['funprog'] . '%';
+        }
+      ?>
     </div></a>
 
     <footer>
