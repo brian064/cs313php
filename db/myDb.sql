@@ -50,7 +50,7 @@ CREATE TABLE kickflip (
 
 --for Overall table
 INSERT INTO overall (usrname, prgtot, transprog, freeprog, funprog)
-VALUES ('Brian_064', 90, 40, 70, 60);
+VALUES ('Brian_064', 45, 40, 70, 60);
 
 --for Transition table
 INSERT INTO transition (info)
