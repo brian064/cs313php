@@ -8,9 +8,9 @@ CREATE TABLE users (
   lastn varchar(100),
   bio varchar(500),
   age int,
-  tprog real,
-  frprog real,
-  fnprog real
+  tprog int,
+  frprog int,
+  fnprog int
 );
 
 -- OVERALL PROGRESSION TABLE
