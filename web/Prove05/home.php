@@ -59,7 +59,7 @@ session_start();
 
     <div class="welcome container">
       <h3>Welcome back, <?php
-        foreach ($db->query('SELECT * FROM users') as $row)
+        foreach ($db->query('SELECT * FROM users WHERE usrname = $_SESSION["usr"]') as $row)
         {
           echo $row['firstn'] . '!';
         }
