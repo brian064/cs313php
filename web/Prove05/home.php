@@ -28,6 +28,8 @@ session_start();
       $_SESSION["usr"] = "Brian_064";
 
       $sql = 'SELECT * FROM users WHERE usrname = \'' . $_SESSION["usr"] . '\'';
+
+      $osql = 'SELECT (tprog+frprog+fnprog)/3 AS oprog FROM users WHERE usrname = \'' . $_SESSION["usr"] . '\'';
       //Connecting to Heroku Database
       try
       {
@@ -73,7 +75,7 @@ session_start();
       <h3>Your Overall Progression:</h3>
       <div class="prgrs">
         <?php
-          foreach ($db->query('SELECT (tprog+frprog+fnprog)/3 AS oprog FROM users') as $row)
+          foreach ($db->query($osql) as $row)
           {
             echo $row['oprog'] . '%';
           }
@@ -89,7 +91,7 @@ session_start();
       <h3>Transition Progress:</h3>
       <div class="prgrs">
         <?php
-          foreach ($db->query('SELECT * FROM users') as $row)
+          foreach ($db->query($sql) as $row)
           {
             echo $row['tprog'] . '%';
           }
@@ -101,7 +103,7 @@ session_start();
       <h3>Freestyle Progress:</h3>
       <div class="prgrs">
         <?php
-          foreach ($db->query('SELECT * FROM users') as $row)
+          foreach ($db->query($sql) as $row)
           {
             echo $row['frprog'] . '%';
           }
@@ -113,7 +115,7 @@ session_start();
       <h3>Fundamentals Progress:</h3>
       <div class="prgrs">
         <?php
-          foreach ($db->query('SELECT * FROM users') as $row)
+          foreach ($db->query($sql) as $row)
           {
             echo $row['fnprog'] . '%';
           }
