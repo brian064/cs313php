@@ -26,6 +26,8 @@ session_start();
     <!-- <?php
       //SESSION Variables
       $_SESSION["usr"] = "Brian_064";
+
+      $sql = "SELECT * FROM users WHERE usrname = " . $_SESSION["usr"];
       //Connecting to Heroku Database
       try
       {
@@ -59,7 +61,7 @@ session_start();
 
     <div class="cheader container">
       <h2>Welcome back, <?php
-        foreach ($db->query('SELECT * FROM users WHERE usrname = $_SESSION["usr"]') as $row)
+        foreach ($db->query($sql) as $row)
         {
           echo $row['firstn'] . '!';
         }
