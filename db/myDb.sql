@@ -1,5 +1,18 @@
 -- Commands for Progress Daily Relational Database
 
+-- USER Table
+CREATE TABLE users (
+  id SERIAL PRIMARY KEY,
+  usrname varchar(80),
+  firstn varchar(100),
+  lastn varchar(100),
+  bio varchar(500),
+  age int,
+  tprog real,
+  frprog real,
+  fnprog real
+);
+
 -- OVERALL PROGRESSION TABLE
 CREATE TABLE overall (
   id SERIAL PRIMARY KEY,

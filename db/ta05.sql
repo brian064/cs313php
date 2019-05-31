@@ -9,6 +9,12 @@ CREATE TABLE scriptures (
   content varchar(300)
 );
 
+-- Creating Topic Table
+CREATE TABLE topic (
+  id SERIAL PRIMARY KEY,
+  name varchar(200)
+);
+
 -- Inserting into table template
 
 -- John 1:5
@@ -26,3 +32,7 @@ VALUES ('D&C', 93, 28, 'He that keepeth his commandments receiveth truth and lig
 -- Mosiah 16:9
 INSERT INTO scriptures (book, chapter, verse, content)
 VALUES ('Mosiah', 16, 9, 'He is the light and the life of the world; yea, a light that is endless, that can never be darkened; yea, and also a life which is endless, that there can be no more death.');
+
+-- Inserting into Topic table (Faith, Sacrifice, Charity)
+INSERT INTO topic (name)
+VALUES ('Faith');

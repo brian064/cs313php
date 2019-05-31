@@ -24,6 +24,8 @@ session_start();
 
     <!-- PHP section -->
     <!-- <?php
+      //SESSION Variables
+      $_SESSION["usr"] = "Brian_064";
       //Connecting to Heroku Database
       try
       {
@@ -59,9 +61,9 @@ session_start();
       <h3>Your Overall Progression:</h3>
       <div class="prgrs">
         <?php
-          foreach ($db->query('SELECT * FROM overall') as $row)
+          foreach ($db->query('SELECT (tprog+frprog+fnprog)/3 AS oprog FROM users') as $row)
           {
-            echo $row['prgtot'] . '%';
+            echo $row['oprog'] . '%';
           }
         ?>
       </div>
@@ -75,9 +77,9 @@ session_start();
       <h3>Transition Progress:</h3>
       <div class="prgrs">
         <?php
-          foreach ($db->query('SELECT * FROM overall') as $row)
+          foreach ($db->query('SELECT * FROM users') as $row)
           {
-            echo $row['transprog'] . '%';
+            echo $row['tprog'] . '%';
           }
         ?>
       </div>
@@ -87,9 +89,9 @@ session_start();
       <h3>Freestyle Progress:</h3>
       <div class="prgrs">
         <?php
-          foreach ($db->query('SELECT * FROM overall') as $row)
+          foreach ($db->query('SELECT * FROM users') as $row)
           {
-            echo $row['freeprog'] . '%';
+            echo $row['frprog'] . '%';
           }
         ?>
       </div>
@@ -99,9 +101,9 @@ session_start();
       <h3>Fundamentals Progress:</h3>
       <div class="prgrs">
         <?php
-          foreach ($db->query('SELECT * FROM overall') as $row)
+          foreach ($db->query('SELECT * FROM users') as $row)
           {
-            echo $row['funprog'] . '%';
+            echo $row['fnprog'] . '%';
           }
         ?>
       </div>
