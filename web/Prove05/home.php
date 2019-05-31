@@ -25,8 +25,9 @@ session_start();
     <!-- PHP section -->
     <!-- <?php
       //SESSION Variables
-      $_SESSION["usr"] = "Brian_064";
+      $_SESSION["usr"] = "TonyDaBest";
 
+      //SQL Select statements
       $sql = 'SELECT * FROM users WHERE usrname = \'' . $_SESSION["usr"] . '\'';
 
       $osql = 'SELECT (tprog+frprog+fnprog)/3 AS oprog FROM users WHERE usrname = \'' . $_SESSION["usr"] . '\'';
