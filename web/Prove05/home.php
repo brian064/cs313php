@@ -57,6 +57,16 @@ session_start();
       </div>
     </div>
 
+    <div class="welcome">
+      <h3>Welcome back, <?php
+        foreach ($db->query('SELECT * FROM users') as $row)
+        {
+          echo $row['firstn'] . '%';
+        }
+      ?>
+      </h3>
+    </div>
+
     <div class="container overall">
       <h3>Your Overall Progression:</h3>
       <div class="prgrs">
