@@ -27,7 +27,7 @@ session_start();
       //SESSION Variables
       $_SESSION["usr"] = "Brian_064";
 
-      $sql = "SELECT * FROM users WHERE usrname = " . $_SESSION["usr"];
+      $sql = 'SELECT * FROM users WHERE usrname = ' . $_SESSION["usr"];
       //Connecting to Heroku Database
       try
       {
