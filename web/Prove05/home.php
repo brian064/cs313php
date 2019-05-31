@@ -57,11 +57,11 @@ session_start();
       </div>
     </div>
 
-    <div class="welcome">
+    <div class="welcome container">
       <h3>Welcome back, <?php
         foreach ($db->query('SELECT * FROM users') as $row)
         {
-          echo $row['firstn'] . '%';
+          echo $row['firstn'] . '!';
         }
       ?>
       </h3>
