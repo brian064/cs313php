@@ -92,20 +92,26 @@ session_start();
       ?></h2>
     </div>
 
-    <div class="updateForm container form">
+    <div class="container updateForm form">
       <h2>Update Your Skill Progress</h2><br/><br/>
       <p>Enter a number between 0 - 100</p><br/><br/>
-      
+
       <form action="transUpdate.php" method="post">
-        Transition Skating: <input type="number" max="100" name="trans"/><br/><br/>
+        Transition Skating: <input type="number" max="100" name="trans"/><br/>
+        <button type="submit">Update</button>
+        <br/><br/>
       </form>
 
       <form action="freeUpdate.php" method="post">
-        Freestyle Skating: <input type="number" max="100" name="trans"/><br/><br/>
+        Freestyle Skating: <input type="number" max="100" name="trans"/><br/>
+        <button type="submit">Update</button>
+        <br/><br/>
       </form>
 
       <form action="funUpdate.php" method="post">
-        Fundamentals Skating: <input type="number" max="100" name="trans"/><br/><br/>
+        Fundamentals Skating: <input type="number" max="100" name="trans"/><br/>
+        <button type="submit">Update</button>
+        <br/><br/>
       </form>
     </div>
 
