@@ -70,6 +70,7 @@ session_start();
         }
       ?>
     </h2>
+    <a href="login.php"><button>Log Out</button></a>
     </div>
 
     <div class="container overall">
