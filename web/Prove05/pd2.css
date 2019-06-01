@@ -72,6 +72,10 @@ a:hover {
   font-weight: bold;
 }
 
+.prgrs p {
+  font-size: 18px;
+}
+
 .login {
   display: block;
   position: relative;
