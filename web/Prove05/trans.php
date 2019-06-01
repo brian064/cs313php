@@ -24,6 +24,13 @@ session_start();
 
     <!-- PHP section -->
     <!-- <?php
+      //SESSION Variables
+      $_SESSION["usr"] = $_POST["usr"];
+
+      //SQL Select statements
+      $sql = 'SELECT * FROM users WHERE usrname = \'' . $_SESSION["usr"] . '\'';
+
+      $osql = 'SELECT (tprog+frprog+fnprog)/3 AS oprog FROM users WHERE usrname = \'' . $_SESSION["usr"] . '\'';
       //Connecting to Heroku Database
       try
       {
@@ -59,9 +66,14 @@ session_start();
       <h3>Transition Progress:</h3>
       <div class="prgrs">
         <?php
-          foreach ($db->query('SELECT * FROM overall') as $row)
+          foreach ($db->query($sql) as $row)
           {
-            echo $row['transprog'] . '%';
+            if ($row['tprog'] == "")
+            {
+              echo "<p>Go to your Profile to update your progress!</p>";
+            } else {
+              echo $row['tprog'] . '%';
+            }
           }
         ?>
       </div>
