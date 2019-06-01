@@ -25,7 +25,6 @@ session_start();
     <!-- PHP section -->
     <!-- <?php
       //SESSION Variables
-      $_SESSION["usr"] = $_POST["usr"];
 
       //SQL Select statements
       $sql = 'SELECT * FROM users WHERE usrname = \'' . $_SESSION["usr"] . '\'';
@@ -62,67 +61,34 @@ session_start();
       </div>
     </div>
 
-    <div class="cheader container">
-      <h2>Welcome back, <?php
-        foreach ($db->query($sql) as $row)
-        {
-          echo $row['firstn'] . '!';
-        }
-      ?>
-    </h2>
-    </div>
+    <div class="container login">
+      <div class="row">
+        <div class="container col-lg-6 col-md-6 col-sm-6 col-xs-6 signUp form">
+          <h3>New Here?</h3><br/>
+          <form action="login.php" method="post">
+            Username: <input type="text" name="usr"><br/><br/>
 
-    <div class="container overall">
-      <h3>Your Overall Progression:</h3>
-      <div class="prgrs">
-        <?php
-          foreach ($db->query($osql) as $row)
-          {
-            echo $row['oprog'] . '%';
-          }
-        ?>
+            First Name: <input type="text" name="firstn"><br/><br/>
+
+            Last Name: <input type="text" name="lastn"><br/><br/>
+
+            Age: <input type="number" name="age"><br/><br/>
+
+            Bio: <textarea name="bio"></textarea><br/><br/>
+
+            <button type="submit">Sign Up</button>
+          </form>
+        </div>
+
+        <div class="container col-lg-6 col-md-6 col-sm-6 col-xs-6 signIn form">
+          <h3>I've seen you before..</h3><br/>
+          <form action="home.php" method="post">
+            Username: <input type="text" name="usr"><br/><br/>
+            <button type="submit">Log In</button>
+          </form>
+        </div>
       </div>
     </div>
-
-    <div class="container cheader">
-      <h2>Categories:</h2>
-    </div>
-
-  <a href="trans.php"><div class="container overall trans">
-      <h3>Transition Progress:</h3>
-      <div class="prgrs">
-        <?php
-          foreach ($db->query($sql) as $row)
-          {
-            echo $row['tprog'] . '%';
-          }
-        ?>
-      </div>
-    </div></a>
-
-    <a href="free.php"><div class="container overall free">
-      <h3>Freestyle Progress:</h3>
-      <div class="prgrs">
-        <?php
-          foreach ($db->query($sql) as $row)
-          {
-            echo $row['frprog'] . '%';
-          }
-        ?>
-      </div>
-    </div></a>
-
-    <a href="fun.php"><div class="container overall fun">
-      <h3>Fundamentals Progress:</h3>
-      <div class="prgrs">
-        <?php
-          foreach ($db->query($sql) as $row)
-          {
-            echo $row['fnprog'] . '%';
-          }
-        ?>
-      </div>
-    </div></a>
 
     <footer>
     </footer>
