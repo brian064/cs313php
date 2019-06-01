@@ -35,7 +35,7 @@ session_start();
       $user = $_SESSION["usr"];
 
       //SQL Select statements
-      $updateSql = "UPDATE users SET tprog = $trans WHERE usrname = '" . $fun . "'";
+      $updateSql = "UPDATE users SET fnprog = $trans WHERE usrname = '" . $fun . "'";
 
       $sql = 'SELECT * FROM users WHERE usrname = \'' . $_SESSION["usr"] . '\'';
 
