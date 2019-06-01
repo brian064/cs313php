@@ -55,6 +55,9 @@ session_start();
         $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
 
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+        //insert new user in users table
+        $db->exec($sql)
       }
 
       catch (PDOException $ex)
@@ -62,12 +65,6 @@ session_start();
         echo 'Error!: ' . $ex->getMessage();
         die();
       }
-
-      $conn = new mysqli($servername, $username, $password, $dbname);
-
-      //insert new user in users table
-      $conn->query($insertSql);
-      $conn->close();
     ?> -->
 
     <div class="myNav">
@@ -79,11 +76,11 @@ session_start();
     <div class="container login">
       <div class="row">
         <div class="container col-lg-6 col-md-6 col-sm-6 col-xs-6 signUp form">
-          <h3>Your account has been created! You can now Log In!</h3><br/>
+          <h3>Your account has been created!</h3><br/>
         </div>
 
         <div class="container col-lg-6 col-md-6 col-sm-6 col-xs-6 signIn form">
-          <h3>I've seen you before..</h3><br/>
+          <h3>You can now Log In!</h3><br/>
           <form action="home.php" method="post">
             Username: <input type="text" name="usr"><br/><br/>
             <button type="submit">Log In</button>
