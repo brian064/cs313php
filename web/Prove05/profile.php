@@ -85,13 +85,13 @@ session_start();
       ?></h2>
     </div>
 
-    <div class="container overall trans">
-      <h3><?php
+    <div class="container cheader">
+      <h2><?php
         foreach ($db->query($sql) as $row)
         {
           echo $row['bio'];
         }
-      ?></h3>
+      ?></h2>
     </div>
 
     <footer>
