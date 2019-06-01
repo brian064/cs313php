@@ -76,16 +76,14 @@ session_start();
       </h2>
     </div>
 
-    <div class="container cheader">
+    <div class="container overall trans">
       <h2>Age: <?php
         foreach ($db->query($sql) as $row)
         {
           echo $row['age'];
         }
       ?></h2>
-    </div>
 
-    <div class="container cheader">
       <h2>Bio: <?php
         foreach ($db->query($sql) as $row)
         {
