@@ -3,6 +3,10 @@
   padding: 0;
 }
 
+footer {
+  margin-top: 50px;
+}
+
 .myNav {
   display: block;
   position: relative;
