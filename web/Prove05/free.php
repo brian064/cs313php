@@ -24,8 +24,6 @@ session_start();
 
     <!-- PHP section -->
     <!-- <?php
-      //SESSION Variables
-      $_SESSION["usr"] = $_POST["usr"];
 
       //SQL Select statements
       $sql = 'SELECT * FROM users WHERE usrname = \'' . $_SESSION["usr"] . '\'';
