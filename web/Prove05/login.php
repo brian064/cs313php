@@ -77,6 +77,10 @@ session_start();
             Bio: <textarea name="bio"></textarea><br/><br/>
 
             <button type="submit">Sign Up</button>
+
+            <div class="message">
+              <?php echo $message; ?>
+            </div>
           </form>
         </div>
 

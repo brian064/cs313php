@@ -78,7 +78,12 @@ session_start();
         <?php
           foreach ($db->query($osql) as $row)
           {
-            echo $row['oprog'] . '%';
+            if ($row == "")
+            {
+              echo "Go to your Profile to update your progress!";
+            } else {
+              echo $row['oprog'] . '%';
+            }
           }
         ?>
       </div>
@@ -92,10 +97,15 @@ session_start();
       <h3>Transition Progress:</h3>
       <div class="prgrs">
         <?php
-          foreach ($db->query($sql) as $row)
+        foreach ($db->query($sql) as $row)
+        {
+          if ($row == "")
           {
+            echo "Go to your Profile to update your progress!";
+          } else {
             echo $row['tprog'] . '%';
           }
+        }
         ?>
       </div>
     </div></a>
@@ -104,10 +114,15 @@ session_start();
       <h3>Freestyle Progress:</h3>
       <div class="prgrs">
         <?php
-          foreach ($db->query($sql) as $row)
+        foreach ($db->query($sql) as $row)
+        {
+          if ($row == "")
           {
+            echo "Go to your Profile to update your progress!";
+          } else {
             echo $row['frprog'] . '%';
           }
+        }
         ?>
       </div>
     </div></a>
@@ -116,10 +131,15 @@ session_start();
       <h3>Fundamentals Progress:</h3>
       <div class="prgrs">
         <?php
-          foreach ($db->query($sql) as $row)
+        foreach ($db->query($sql) as $row)
+        {
+          if ($row == "")
           {
+            echo "Go to your Profile to update your progress!";
+          } else {
             echo $row['fnprog'] . '%';
           }
+        }
         ?>
       </div>
     </div></a>
