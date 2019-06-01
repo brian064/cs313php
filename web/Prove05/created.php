@@ -34,7 +34,7 @@ session_start();
       $bio = $_POST["bio"];
 
       //SQL Select statements
-      $insertSql = "INSERT INTO users (usrname, firstn, lastn, bio, age) VALUES ('$usrname', '$firstn', '$lastn', '$bio', '$age')";
+      $insertSql = "INSERT INTO users (usrname, firstn, lastn, bio, age) VALUES ('$usrname', '$firstn', '$lastn', '$bio', '$age');";
 
       $sql = 'SELECT * FROM users WHERE usrname = \'' . $_SESSION["usr"] . '\'';
 
