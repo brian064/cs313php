@@ -86,7 +86,7 @@ session_start();
     </div>
 
     <div class="container cheader">
-      <h2><?php
+      <h2>Bio: <?php
         foreach ($db->query($sql) as $row)
         {
           echo $row['bio'];
