@@ -57,7 +57,7 @@ session_start();
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         //insert new user in users table
-        $db->exec($sql)
+        $db->exec($sql);
       }
 
       catch (PDOException $ex)
