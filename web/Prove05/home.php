@@ -80,7 +80,7 @@ session_start();
           {
             if ($row['oprog'] == "")
             {
-              echo "Go to your Profile to update your progress!";
+              echo "<p>Go to your Profile to update your progress!</p>";
             } else {
               echo $row['oprog'] . '%';
             }
@@ -101,7 +101,7 @@ session_start();
         {
           if ($row['tprog'] == "")
           {
-            echo "Go to your Profile to update your progress!";
+            echo "<p>Go to your Profile to update your progress!</p>";
           } else {
             echo $row['tprog'] . '%';
           }
@@ -118,7 +118,7 @@ session_start();
         {
           if ($row['frprog'] == "")
           {
-            echo "Go to your Profile to update your progress!";
+            echo "<p>Go to your Profile to update your progress!</p>";
           } else {
             echo $row['frprog'] . '%';
           }
@@ -135,7 +135,7 @@ session_start();
         {
           if ($row['fnprog'] == "")
           {
-            echo "Go to your Profile to update your progress!";
+            echo "<p>Go to your Profile to update your progress!</p>";
           } else {
             echo $row['fnprog'] . '%';
           }
