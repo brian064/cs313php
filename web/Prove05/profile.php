@@ -104,7 +104,7 @@ session_start();
 
       <form action="freeUpdate.php" method="post">
         Freestyle Skating: <input type="number" max="100" name="free"/><br/>
-        <button type="submit" name="free">Update</button>
+        <button type="submit">Update</button>
         <br/><br/>
       </form>
 
