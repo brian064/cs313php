@@ -103,13 +103,13 @@ session_start();
       </form>
 
       <form action="freeUpdate.php" method="post">
-        Freestyle Skating: <input type="number" max="100" name="trans"/><br/>
+        Freestyle Skating: <input type="number" max="100" name="free"/><br/>
         <button type="submit">Update</button>
         <br/><br/>
       </form>
 
       <form action="funUpdate.php" method="post">
-        Fundamentals Skating: <input type="number" max="100" name="trans"/><br/>
+        Fundamentals Skating: <input type="number" max="100" name="fun"/><br/>
         <button type="submit">Update</button>
         <br/><br/>
       </form>
