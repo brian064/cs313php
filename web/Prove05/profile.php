@@ -11,7 +11,7 @@ session_start();
     <meta name="author" content="">
     <link rel="icon" href="../../../../favicon.ico">
 
-    <title>Progress Daily | Home</title>
+    <title>Progress Daily | Your Profile</title>
 
     <!-- Bootstrap core CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -61,96 +61,38 @@ session_start();
 
     <div class="myNav">
       <div class="container">
-        <a href="home.php"><h4>Progress Daily</h4></a>
+        <a href="home.php"><h4>Back to Home</h4></a>
       </div>
     </div>
 
     <div class="cheader container">
-      <h2>Welcome back, <?php
-        foreach ($db->query($sql) as $row)
-        {
-          echo $row['firstn'] . '!';
-        }
-      ?>
-      </h2>
-
-      <div class="homeButtons">
-        <a href="login.php"><button>Log Out</button></a>
-        <a href="profile.php"><button>Your Profile</button></a>
-      </div>
-    </div>
-
-    <div class="container overall">
-      <h3>Your Overall Progression:</h3>
-      <div class="prgrs">
+      <h2>
         <?php
-          foreach ($db->query($osql) as $row)
+          foreach ($db->query($sql) as $row)
           {
-            if ($row['oprog'] == "")
-            {
-              echo "<p>Go to your Profile to update your progress!</p>";
-            } else {
-              echo $row['oprog'] . '%';
-            }
+            echo $row['firstn'] . " " . $row['lastn'];
           }
-        ?>
-      </div>
+        ?>'s Profile
+      </h2>
     </div>
 
     <div class="container cheader">
-      <h2>Categories:</h2>
+      <h2>Age: <?php
+        foreach ($db->query($sql) as $row)
+        {
+          echo $row['age'];
+        }
+      ?></h2>
     </div>
 
-  <a href="trans.php"><div class="container overall trans">
-      <h3>Transition Progress:</h3>
-      <div class="prgrs">
-        <?php
+    <div class="container overall trans">
+      <h3><?php
         foreach ($db->query($sql) as $row)
         {
-          if ($row['tprog'] == "")
-          {
-            echo "<p>Go to your Profile to update your progress!</p>";
-          } else {
-            echo $row['tprog'] . '%';
-          }
+          echo $row['bio'];
         }
-        ?>
-      </div>
-    </div></a>
-
-    <a href="free.php"><div class="container overall free">
-      <h3>Freestyle Progress:</h3>
-      <div class="prgrs">
-        <?php
-        foreach ($db->query($sql) as $row)
-        {
-          if ($row['frprog'] == "")
-          {
-            echo "<p>Go to your Profile to update your progress!</p>";
-          } else {
-            echo $row['frprog'] . '%';
-          }
-        }
-        ?>
-      </div>
-    </div></a>
-
-    <a href="fun.php"><div class="container overall fun">
-      <h3>Fundamentals Progress:</h3>
-      <div class="prgrs">
-        <?php
-        foreach ($db->query($sql) as $row)
-        {
-          if ($row['fnprog'] == "")
-          {
-            echo "<p>Go to your Profile to update your progress!</p>";
-          } else {
-            echo $row['fnprog'] . '%';
-          }
-        }
-        ?>
-      </div>
-    </div></a>
+      ?></h3>
+    </div>
 
     <footer>
     </footer>
