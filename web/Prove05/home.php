@@ -78,7 +78,7 @@ session_start();
         <?php
           foreach ($db->query($osql) as $row)
           {
-            if ($row == "")
+            if ($row['oprog'] == "")
             {
               echo "Go to your Profile to update your progress!";
             } else {
@@ -99,7 +99,7 @@ session_start();
         <?php
         foreach ($db->query($sql) as $row)
         {
-          if ($row == "")
+          if ($row['tprog'] == "")
           {
             echo "Go to your Profile to update your progress!";
           } else {
@@ -116,7 +116,7 @@ session_start();
         <?php
         foreach ($db->query($sql) as $row)
         {
-          if ($row == "")
+          if ($row['frprog'] == "")
           {
             echo "Go to your Profile to update your progress!";
           } else {
@@ -133,7 +133,7 @@ session_start();
         <?php
         foreach ($db->query($sql) as $row)
         {
-          if ($row == "")
+          if ($row['fnprog'] == "")
           {
             echo "Go to your Profile to update your progress!";
           } else {
