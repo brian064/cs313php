@@ -26,7 +26,16 @@ session_start();
     <!-- <?php
       //SESSION Variables
 
+      //Get Form Variables
+      $usrname = $_POST["usr"];
+      $firstn = $_POST["firstn"];
+      $lastn = $_POST["lastn"];
+      $age = $_POST["age"];
+      $bio = $_POST["bio"];
+
       //SQL Select statements
+      $insertSql = "INSERT INTO users (usrname, firstn, lastn, bio, age) VALUES ('$usrname', '$firstn', '$lastn', '$bio', '$age')";
+
       $sql = 'SELECT * FROM users WHERE usrname = \'' . $_SESSION["usr"] . '\'';
 
       $osql = 'SELECT (tprog+frprog+fnprog)/3 AS oprog FROM users WHERE usrname = \'' . $_SESSION["usr"] . '\'';
@@ -53,6 +62,12 @@ session_start();
         echo 'Error!: ' . $ex->getMessage();
         die();
       }
+
+      $conn = new mysqli($servername, $username, $password, $dbname);
+
+      //insert new user in users table
+      $conn->query($insertSql);
+      $conn->close();
     ?> -->
 
     <div class="myNav">
@@ -64,24 +79,7 @@ session_start();
     <div class="container login">
       <div class="row">
         <div class="container col-lg-6 col-md-6 col-sm-6 col-xs-6 signUp form">
-          <h3>New Here?</h3><br/>
-          <form action="created.php" method="post">
-            Username: <input type="text" name="usr"><br/><br/>
-
-            First Name: <input type="text" name="firstn"><br/><br/>
-
-            Last Name: <input type="text" name="lastn"><br/><br/>
-
-            Age: <input type="number" name="age"><br/><br/>
-
-            Bio: <textarea name="bio"></textarea><br/><br/>
-
-            <button type="submit">Sign Up</button>
-
-            <div class="message">
-              <?php echo $message; ?>
-            </div>
-          </form>
+          <h3>Your account has been created! You can now Log In!</h3><br/>
         </div>
 
         <div class="container col-lg-6 col-md-6 col-sm-6 col-xs-6 signIn form">
