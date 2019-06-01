@@ -87,20 +87,6 @@ session_start();
       ?></p>
     </div>
 
-    <div class="container overall free">
-      <h3>Freestyle Trick 1:</h3>
-      <div class="prgrs">
-        91%
-      </div>
-    </div>
-
-    <div class="container overall free">
-      <h3>Freestyle Trick 2:</h3>
-      <div class="prgrs">
-        4%
-      </div>
-    </div>
-
     <footer>
     </footer>
 

@@ -87,20 +87,6 @@ session_start();
       ?></p>
     </div>
 
-    <div class="container overall fun">
-      <h3>Fundamentals Trick 1:</h3>
-      <div class="prgrs">
-        20%
-      </div>
-    </div>
-
-    <div class="container overall fun">
-      <h3>Fundamentals Trick 2:</h3>
-      <div class="prgrs">
-        34%
-      </div>
-    </div>
-
     <footer>
     </footer>
 

@@ -87,20 +87,6 @@ session_start();
       ?></p>
     </div>
 
-    <div class="container overall trans">
-      <h3>Transition Trick 1:</h3>
-      <div class="prgrs">
-        80%
-      </div>
-    </div>
-
-    <div class="container overall trans">
-      <h3>Transition Trick 2:</h3>
-      <div class="prgrs">
-        50%
-      </div>
-    </div>
-
     <footer>
     </footer>
 
