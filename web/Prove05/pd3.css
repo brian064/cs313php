@@ -8,7 +8,7 @@
   background-repeat: no-repeat;
   background-image: url("sls.jpg");
   background-position: left;
-  background-size: contain;
+  background-size: cover;
 }
 
 footer {
