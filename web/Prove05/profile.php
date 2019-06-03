@@ -94,7 +94,7 @@ session_start();
 
     <div class="container updateForm form">
       <h2>Update Your Skill Progress</h2><br/><br/>
-      <p>Enter a number between 0 - 100</p><br/><br/>
+      <p>Enter a number between 0 - 100</p><br/>
 
       <form action="transUpdate.php" method="post">
         Transition Skating: <input type="number" max="100" name="trans"/><br/>
