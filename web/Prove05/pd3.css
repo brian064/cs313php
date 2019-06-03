@@ -3,8 +3,12 @@
   padding: 0;
 }
 
-body {
+.loginBody {
   background-color: #303030;
+  background-repeat: no-repeat;
+  background-image: url("sls.jpg");
+  background-position: left;
+  background-size: contain;
 }
 
 footer {

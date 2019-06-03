@@ -20,7 +20,7 @@ session_start();
     <link href="pd3.css" rel="stylesheet">
   </head>
 
-  <body>
+  <body class="loginBody">
 
     <!-- PHP section -->
     <!-- <?php
