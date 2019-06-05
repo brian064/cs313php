@@ -29,7 +29,7 @@ session_start();
       //SQL Select statements
       // $sql = 'SELECT * FROM users WHERE usrname = \'' . $_SESSION["usr"] . '\'';
 
-      $osql = 'SELECT (tprog+frprog+fnprog)/3 AS oprog FROM users WHERE usrname = \'' . $_SESSION["usr"] . '\'';
+      // $osql = 'SELECT (tprog+frprog+fnprog)/3 AS oprog FROM users WHERE usrname = \'' . $_SESSION["usr"] . '\'';
       //Connecting to Heroku Database
       try
       {
@@ -103,9 +103,11 @@ session_start();
             <button type="submit">Sign Up</button>
 
             <div class="message">
-              <?php echo if ($badLogin) {
-                echo "ERROR: Username already exists";
-              } ?>
+              <?php
+                if ($badLogin) {
+                  echo "ERROR: Username already exists";
+                } 
+              ?>
             </div>
           </form>
         </div>
