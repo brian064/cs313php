@@ -89,7 +89,7 @@ session_start();
       <div class="row">
         <div class="container col-lg-6 col-md-6 col-sm-6 col-xs-6 signUp form">
           <h3>New Here?</h3><br/>
-          <form action="login.php" method="post">
+          <form action="created.php" method="post">
             Username: <input type="text" name="usr"><br/><br/>
 
             First Name: <input type="text" name="firstn"><br/><br/>
@@ -106,7 +106,7 @@ session_start();
               <?php
                 if ($badLogin) {
                   echo "ERROR: Username already exists";
-                } 
+                }
               ?>
             </div>
           </form>
@@ -114,7 +114,7 @@ session_start();
 
         <div class="container col-lg-6 col-md-6 col-sm-6 col-xs-6 signIn form">
           <h3>I've seen you before..</h3><br/>
-          <form action="login.php" method="post">
+          <form action="home.php" method="post">
             Username: <input type="text" name="usr"><br/><br/>
             <button type="submit">Log In</button>
           </form>
