@@ -23,11 +23,11 @@ session_start();
   <body class="loginBody">
 
     <!-- PHP section -->
-    <!-- <?php
+    <?php
       //SESSION Variables
-      $_SESSION["usr"] = "";
+      // $_SESSION["usr"] = "";
       //SQL Select statements
-      $sql = 'SELECT * FROM users WHERE usrname = \'' . $_SESSION["usr"] . '\'';
+      // $sql = 'SELECT * FROM users WHERE usrname = \'' . $_SESSION["usr"] . '\'';
 
       $osql = 'SELECT (tprog+frprog+fnprog)/3 AS oprog FROM users WHERE usrname = \'' . $_SESSION["usr"] . '\'';
       //Connecting to Heroku Database
@@ -53,7 +53,31 @@ session_start();
         echo 'Error!: ' . $ex->getMessage();
         die();
       }
-    ?> -->
+
+      $result = "result";
+      if (isset($_POST["usr"]))
+      {
+         $username = $_POST["usr"];
+         $sql = 'SELECT * FROM users WHERE usrname = \'' . $username . '\'';
+
+         foreach ($db->query($sql) as $row)
+         {
+           $result = $row["usrname"];
+         }
+
+         if ($result)
+         {
+           $_SESSION["usr"] = $username;
+           $result = "";
+           header("Location: home.php");
+           die();
+         } else {
+           $badLogin = true;
+         }
+      } else {
+        $_SESSION["usr"] = "";
+      }
+    ?>
 
     <div class="myNav">
       <div class="container">
@@ -65,7 +89,7 @@ session_start();
       <div class="row">
         <div class="container col-lg-6 col-md-6 col-sm-6 col-xs-6 signUp form">
           <h3>New Here?</h3><br/>
-          <form action="created.php" method="post">
+          <form action="login.php" method="post">
             Username: <input type="text" name="usr"><br/><br/>
 
             First Name: <input type="text" name="firstn"><br/><br/>
@@ -79,14 +103,16 @@ session_start();
             <button type="submit">Sign Up</button>
 
             <div class="message">
-              <?php echo $message; ?>
+              <?php echo if ($badLogin) {
+                echo "ERROR: Username already exists";
+              } ?>
             </div>
           </form>
         </div>
 
         <div class="container col-lg-6 col-md-6 col-sm-6 col-xs-6 signIn form">
           <h3>I've seen you before..</h3><br/>
-          <form action="home.php" method="post">
+          <form action="login.php" method="post">
             Username: <input type="text" name="usr"><br/><br/>
             <button type="submit">Log In</button>
           </form>
