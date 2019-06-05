@@ -25,11 +25,11 @@ session_start();
     <!-- PHP section -->
     <?php
       //SESSION Variables
-      // $_SESSION["usr"] = "";
+      $_SESSION["usr"] = "";
       //SQL Select statements
-      // $sql = 'SELECT * FROM users WHERE usrname = \'' . $_SESSION["usr"] . '\'';
+      $sql = 'SELECT * FROM users WHERE usrname = \'' . $_SESSION["usr"] . '\'';
 
-      // $osql = 'SELECT (tprog+frprog+fnprog)/3 AS oprog FROM users WHERE usrname = \'' . $_SESSION["usr"] . '\'';
+      $osql = 'SELECT (tprog+frprog+fnprog)/3 AS oprog FROM users WHERE usrname = \'' . $_SESSION["usr"] . '\'';
       //Connecting to Heroku Database
       try
       {
@@ -54,29 +54,29 @@ session_start();
         die();
       }
 
-      $result = "result";
-      if (isset($_POST["usr"]))
-      {
-         $username = $_POST["usr"];
-         $sql = 'SELECT * FROM users WHERE usrname = \'' . $username . '\'';
-
-         foreach ($db->query($sql) as $row)
-         {
-           $result = $row["usrname"];
-         }
-
-         if ($result)
-         {
-           $_SESSION["usr"] = $username;
-           $result = "";
-           header("Location: home.php");
-           die();
-         } else {
-           $badLogin = true;
-         }
-      } else {
-        $_SESSION["usr"] = "";
-      }
+      // $result = "result";
+      // if (isset($_POST["usr"]))
+      // {
+      //    $username = $_POST["usr"];
+      //    $sql = 'SELECT * FROM users WHERE usrname = \'' . $username . '\'';
+      //
+      //    foreach ($db->query($sql) as $row)
+      //    {
+      //      $result = $row["usrname"];
+      //    }
+      //
+      //    if ($result)
+      //    {
+      //      $_SESSION["usr"] = $username;
+      //      $result = "";
+      //      header("Location: home.php");
+      //      die();
+      //    } else {
+      //      $badLogin = true;
+      //    }
+      // } else {
+      //   $_SESSION["usr"] = "";
+      // }
     ?>
 
     <div class="myNav">
