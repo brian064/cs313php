@@ -38,13 +38,13 @@ session_start();
       $user = $_SESSION["usr"];
 
       //SQL Select statements
-      $updateSql1 = "UPDATE users SET firstn = $firstn WHERE usrname = '$user'";
+      $updateSql1 = "UPDATE users SET firstn = '$firstn' WHERE usrname = '$user'";
 
-      $updateSql2 = "UPDATE users SET lastn = $lastn WHERE usrname = '$user'";
+      $updateSql2 = "UPDATE users SET lastn = '$lastn' WHERE usrname = '$user'";
 
       $updateSql3 = "UPDATE users SET age = $age WHERE usrname = '$user'";
 
-      $updateSql4 = "UPDATE users SET bio = $bio WHERE usrname = '$user'";
+      $updateSql4 = "UPDATE users SET bio = '$bio' WHERE usrname = '$user'";
 
       $sql = 'SELECT * FROM users WHERE usrname = \'' . $_SESSION["usr"] . '\'';
 
@@ -69,9 +69,9 @@ session_start();
         if ($firstn && $lastn && $age && $bio) {
           //insert new user in users table
           $db->exec($updateSql1);
-          // $db->exec($updateSql2);
-          // $db->exec($updateSql3);
-          // $db->exec($updateSql4);
+          $db->exec($updateSql2);
+          $db->exec($updateSql3);
+          $db->exec($updateSql4);
         } else {
           $notValid = true;
         }
