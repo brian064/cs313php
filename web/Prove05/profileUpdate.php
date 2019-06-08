@@ -69,9 +69,9 @@ session_start();
         if ($firstn && $lastn && $age && $bio) {
           //insert new user in users table
           $db->exec($updateSql1);
-          $db->exec($updateSql2);
-          $db->exec($updateSql3);
-          $db->exec($updateSql4);
+          // $db->exec($updateSql2);
+          // $db->exec($updateSql3);
+          // $db->exec($updateSql4);
         } else {
           $notValid = true;
         }
