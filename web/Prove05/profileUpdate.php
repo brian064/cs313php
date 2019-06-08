@@ -27,10 +27,25 @@ session_start();
       //SESSION Variables
       if ($_SESSION["usr"] == "")
       {
-      $_SESSION["usr"] = $_POST["usr"];
+        $_SESSION["usr"] = $_POST["usr"];
       }
+      $notValid = false;
+      //getting Form Variables
+      $firstn = $_POST["firstn"];
+      $lastn = $_POST["lastn"];
+      $age = $_POST["age"];
+      $bio = $_POST["bio"];
+      $user = $_SESSION["usr"];
 
       //SQL Select statements
+      $updateSql1 = "UPDATE users SET firstn = $firstn WHERE usrname = '$user'";
+
+      $updateSql2 = "UPDATE users SET lastn = $lastn WHERE usrname = '$user'";
+
+      $updateSql3 = "UPDATE users SET age = $age WHERE usrname = '$user'";
+
+      $updateSql4 = "UPDATE users SET bio = $bio WHERE usrname = '$user'";
+
       $sql = 'SELECT * FROM users WHERE usrname = \'' . $_SESSION["usr"] . '\'';
 
       $osql = 'SELECT (tprog+frprog+fnprog)/3 AS oprog FROM users WHERE usrname = \'' . $_SESSION["usr"] . '\'';
@@ -50,6 +65,16 @@ session_start();
         $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
 
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+        if ($firstn && $lastn && $age && $bio) {
+          //insert new user in users table
+          $db->exec($updateSql1);
+          $db->exec($updateSql2);
+          $db->exec($updateSql3);
+          $db->exec($updateSql4);
+        } else {
+          $notValid = true;
+        }
       }
 
       catch (PDOException $ex)
@@ -61,79 +86,21 @@ session_start();
 
     <div class="myNav">
       <div class="container">
-        <a href="home.php"><h4>Back to Home</h4></a>
+        <a href="profile.php"><h4>Back to Profile</h4></a>
       </div>
     </div>
 
     <div class="cheader container">
       <h2>
         <?php
-          foreach ($db->query($sql) as $row)
+          if ($notValid)
           {
-            echo $row['firstn'] . " " . $row['lastn'];
+            echo "Update failed. One or more missing fields."
+          } else {
+            echo "Profile update successful."
           }
-        ?>'s Profile
+        ?>
       </h2>
-
-      <div class="homeButtons">
-        <a href="deleted.php"><button>Delete Your Profile</button></a>
-      </div>
-    </div>
-
-    <div class="container overall trans">
-      <h2>Age: <?php
-        foreach ($db->query($sql) as $row)
-        {
-          echo $row['age'];
-        }
-      ?></h2>
-
-      <h2>Bio: <?php
-        foreach ($db->query($sql) as $row)
-        {
-          echo $row['bio'];
-        }
-      ?></h2>
-    </div>
-
-    <div class="container updateForm form">
-      <h2>Update Your Skill Progress</h2><br/><br/>
-      <p>Enter a number between 0 - 100</p><br/>
-
-      <form action="transUpdate.php" method="post">
-        Transition Skating: <input type="number" max="100" name="trans"/><br/>
-        <button type="submit">Update</button>
-        <br/><br/>
-      </form>
-
-      <form action="freeUpdate.php" method="post">
-        Freestyle Skating: <input type="number" max="100" name="free"/><br/>
-        <button type="submit">Update</button>
-        <br/><br/>
-      </form>
-
-      <form action="funUpdate.php" method="post">
-        Fundamentals Skating: <input type="number" max="100" name="fun"/><br/>
-        <button type="submit">Update</button>
-        <br/><br/>
-      </form>
-    </div>
-
-    <div class="container updateForm form">
-      <h2>Update Your Profile Info</h2><br/><br/>
-      <p>Fill out entire form.</p><br/>
-
-      <form action="profileUpdate.php" method="post">
-        First Name: <input type="text" name="firstn"><br/><br/>
-
-        Last Name: <input type="text" name="lastn"><br/><br/>
-
-        Age: <input type="number" name="age"><br/><br/>
-
-        Bio: <textarea name="bio"></textarea><br/><br/>
-
-        <button type="submit">Sign Up</button>
-      </form>
     </div>
 
     <footer>
