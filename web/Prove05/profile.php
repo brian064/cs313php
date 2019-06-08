@@ -119,7 +119,7 @@ session_start();
       </form>
     </div>
 
-    <div class="container updateForm form">
+    <div class="container updateForm form" style="margin-top: 30px;">
       <h2>Update Your Profile Info</h2><br/><br/>
       <p>Fill out entire form.</p><br/>
 
