@@ -132,7 +132,7 @@ session_start();
 
         Bio: <textarea name="bio"></textarea><br/><br/>
 
-        <button type="submit">Sign Up</button>
+        <button type="submit">Update</button>
       </form>
     </div>
 
