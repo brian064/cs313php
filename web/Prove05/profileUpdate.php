@@ -29,6 +29,7 @@ session_start();
       {
         $_SESSION["usr"] = $_POST["usr"];
       }
+
       $notValid = false;
       //getting Form Variables
       $firstn = $_POST["firstn"];
@@ -95,9 +96,9 @@ session_start();
         <?php
           if ($notValid)
           {
-            echo "Update failed. One or more missing fields."
+            echo "Update failed. One or more missing fields.";
           } else {
-            echo "Profile update successful."
+            echo "Profile update successful.";
           }
         ?>
       </h2>
