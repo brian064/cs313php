@@ -85,6 +85,16 @@ session_start();
           echo $row['info'];
         }
       ?></p>
+
+      <br></br>
+      <h2>Tricks to master:</h2>
+      <ul>
+        <li>The Drop In</li>
+        <li>Rock to Fakie</li>
+        <li>Nose Stall</li>
+        <li>Tail Stall</li>
+        <li>Axel Stall</li>
+      </ul>
     </div>
 
     <footer>
