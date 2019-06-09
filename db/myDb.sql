@@ -13,24 +13,6 @@ CREATE TABLE users (
   fnprog int
 );
 
--- OVERALL PROGRESSION TABLE
-CREATE TABLE overall (
-  id SERIAL PRIMARY KEY,
-  usrname varchar(100),
-  prgtot real, -- total progression across all categories
-  transprog real, -- Transition Category Overall Progression
-  freeprog real, -- Freestyle Category Overall Progression
-  funprog real -- Fundamentals Category Overall Progression
-);
-
--- USER TABLE
-CREATE TABLE userInfo (
-  id SERIAL PRIMARY KEY,
-  name varchar(100),
-  bio varchar(200), -- User Biography
-  age int -- User age
-);
-
 -- TRANSITION TRICKS CATEGORY TABLE
 CREATE TABLE transition (
   id SERIAL PRIMARY KEY,
@@ -52,18 +34,7 @@ CREATE TABLE freestyle (
   trk1 real -- specific trick progression
 );
 
--- KICKFLIP TABLE (Example of a specific trick table)
-CREATE TABLE kickflip (
-  id SERIAL PRIMARY KEY,
-  info varchar(2000),
-  prg real -- trick progress
-);
-
--- Inserting Dummy Info into tables
-
---for Overall Table
-INSERT INTO overall (usrname, prgtot, transprog, freeprog, funprog)
-VALUES ('Brian_064', 45, 40, 70, 60);
+-- Inserting Info into tables
 
 --for Transition Table
 INSERT INTO transition (info)
